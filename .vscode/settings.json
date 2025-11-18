@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "workbench.colorTheme": "Noctis Minimus",
+  "editor.fontSize": 17,
+  "terminal.integrated.fontSize": 17,
+  "editor.wordWrap": "on"
+}

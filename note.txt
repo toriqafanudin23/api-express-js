@@ -1,0 +1,9 @@
+npm init -y (inisialisasi awal project nodejs)
+npm install express cors prisma dotenv
+
+npx prisma init --datasource-provider postgresql (inisialisasi prisma)
+membuat model di schema.prisma
+ubah provider = "prisma-client-js" (kalo pake .js)
+tambahkan dotenv di prisma.config.ts
+npx prisma generate
+npx prisma db push
