@@ -6,10 +6,10 @@ import {
   updateUser,
 } from "../controllers/userController.js";
 
-const router = Router();
-router.get("/users", getUsers);
-router.post("/users", createUser);
-router.delete("/users/:id", deleteUser);
-router.put("/users/:id", updateUser);
-export default router;
+const userRoutes = Router();
+userRoutes.get("/users", getUsers);
+userRoutes.post("/users", createUser);
+userRoutes.delete("/users/:id", deleteUser);
+userRoutes.put("/users/:id", updateUser);
+export default userRoutes;
 //# sourceMappingURL=userRoutes.js.map
