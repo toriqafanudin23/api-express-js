@@ -9,3 +9,6 @@ ubah provider = "prisma-client-js" (kalo pake .js)
 tambahkan dotenv di prisma.config.ts
 npx prisma generate
 npx prisma db push
+
+LOGIN DENGAN JWT
+npm install bcryptjs jsonwebtoken

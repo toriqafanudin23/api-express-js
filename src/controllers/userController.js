@@ -14,15 +14,32 @@ export const createUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
     const isActive = true;
+
+    const existingUser = await prisma.$queryRaw`
+      SELECT email FROM "User" WHERE email = ${email};
+    `;
+
+    if (existingUser.length > 0) {
+      return res
+        .status(202)
+        .json({
+          message: "Email sudah dipakai, gunakan email lain!",
+          status: 1,
+        });
+    }
+
     const user =
       await prisma.$queryRaw`INSERT INTO "User" (name, email, password, role, "isActive") VALUES (${name}, ${email}, ${password}, ${role}, ${isActive}) RETURNING *`;
-    res.status(201).json({
-      message: "Berhasil menambahkan data!",
-      data: user,
-    });
+    res
+      .status(201)
+      .json({
+        message: "Berhasil menambahkan data! Silahkan login!",
+        data: user,
+        status: 2,
+      });
   } catch (err) {
     console.error("Error post users:", err);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
 

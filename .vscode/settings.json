@@ -6,7 +6,7 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
-  "workbench.colorTheme": "Noctis Minimus",
+  "workbench.colorTheme": "Noctis Obscuro",
   "editor.fontSize": 17,
   "terminal.integrated.fontSize": 17,
   "editor.wordWrap": "on"
